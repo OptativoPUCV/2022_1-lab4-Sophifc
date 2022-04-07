@@ -40,7 +40,19 @@ int is_equal(void* key1, void* key2){
 
 
 void insertMap(HashMap * map, char * key, void * value) {
-
+  long aux=hash(key,map->capacity);
+  while(map->buckets[aux]!==NULL){
+    if(is_equal(map->key,key)){
+      return;
+    }
+    else{
+      Pair* dato=cretePeir(kay,value);
+      map->buckets[i]=dato;
+      map->current=aux;
+      map->size++;
+    }
+    aux++;
+  }
 
 }
 

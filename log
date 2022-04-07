@@ -1,0 +1,26 @@
+Thu Apr  7 23:23:34 UTC 2022: 
+ hashmap.c | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:44:28: error: expected expression before ‘=’ token
+   while(map->buckets[aux]!==NULL){
+                            ^
+hashmap.c:45:20: error: ‘HashMap {aka struct HashMap}’ has no member named ‘key’
+     if(is_equal(map->key,key)){
+                    ^~
+hashmap.c:49:18: error: implicit declaration of function ‘cretePeir’; did you mean ‘createPair’? [-Werror=implicit-function-declaration]
+       Pair* dato=cretePeir(kay,value);
+                  ^~~~~~~~~
+                  createPair
+hashmap.c:49:28: error: ‘kay’ undeclared (first use in this function); did you mean ‘key’?
+       Pair* dato=cretePeir(kay,value);
+                            ^~~
+                            key
+hashmap.c:49:28: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:50:20: error: ‘i’ undeclared (first use in this function)
+       map->buckets[i]=dato;
+                    ^
+cc1: all warnings being treated as errors
+Compilation failed
+67fd0cf
