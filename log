@@ -59,3 +59,31 @@ Thu Apr  7 23:25:33 UTC 2022:
  tests:  0|6
 total_score: 0/70
 611f5a4
+Thu Apr  7 23:29:24 UTC 2022: 
+ hashmap.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:61:12: error: ‘map’ redeclared as different kind of symbol
+   HashMap *map=createMap(map->capacity*2)
+            ^~~
+hashmap.c:59:24: note: previous definition of ‘map’ was here
+ void enlarge(HashMap * map) {
+                        ^~~
+hashmap.c:62:3: error: expected ‘,’ or ‘;’ before ‘for’
+   for(int i=0 ; i < map->capacity ; i++){
+   ^~~
+hashmap.c:62:17: error: ‘i’ undeclared (first use in this function)
+   for(int i=0 ; i < map->capacity ; i++){
+                 ^
+hashmap.c:62:17: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:62:40: error: expected ‘;’ before ‘)’ token
+   for(int i=0 ; i < map->capacity ; i++){
+                                        ^
+hashmap.c:62:40: error: expected statement before ‘)’ token
+hashmap.c:64:19: error: ‘mapa’ undeclared (first use in this function); did you mean ‘map’?
+         insertMap(mapa,map->buckets[i]->key,map->buckets[i]->value);
+                   ^~~~
+                   map
+Compilation failed
+d47bf0c
