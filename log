@@ -24,3 +24,19 @@ hashmap.c:50:20: error: ‘i’ undeclared (first use in this function)
 cc1: all warnings being treated as errors
 Compilation failed
 67fd0cf
+Thu Apr  7 23:24:04 UTC 2022: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:45:20: error: ‘HashMap {aka struct HashMap}’ has no member named ‘key’
+     if(is_equal(map->key,key)){
+                    ^~
+hashmap.c:49:18: error: implicit declaration of function ‘craetePeir’; did you mean ‘createPair’? [-Werror=implicit-function-declaration]
+       Pair* dato=craetePeir(key,value);
+                  ^~~~~~~~~~
+                  createPair
+hashmap.c:49:18: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+cc1: all warnings being treated as errors
+Compilation failed
+b4ab5b8
