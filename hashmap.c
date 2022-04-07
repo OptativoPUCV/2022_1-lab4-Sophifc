@@ -98,9 +98,22 @@ int elim=1;
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
+long pos=hash(key, map->capacity);
+  int ret=1;
+  do{
+    if((map->buckets[pos])==NULL){
+      return NULL;
+    }
+    else{
+      if(is_equal(map->buckets[pos]->key, key)==1){
+        map->current=pos;
+        return map->buckets[pos];
+      }
+    }
+    pos++;
+  }while(ret!=0);
+  return NULL;
 
-
-    return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
