@@ -124,3 +124,13 @@ In file included from test.c:2:0:
               ^~~~~~
 Compilation failed
 b786ef6
+Thu Apr  7 23:31:51 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘createMap’:
+hashmap.c:72:3: error: conversion to non-scalar type requested
+   HashMap *mapa=(HashMap)malloc(sizeof(HashMap));
+   ^~~~~~~
+Compilation failed
+ffc00a7
