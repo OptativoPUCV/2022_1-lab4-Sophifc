@@ -53,3 +53,9 @@ hashmap.c:49:18: error: initialization makes pointer from integer without a cast
 cc1: all warnings being treated as errors
 Compilation failed
 90ea976
+Thu Apr  7 23:25:33 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|6
+total_score: 0/70
+611f5a4
