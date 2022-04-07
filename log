@@ -40,3 +40,16 @@ hashmap.c:49:18: error: initialization makes pointer from integer without a cast
 cc1: all warnings being treated as errors
 Compilation failed
 b4ab5b8
+Thu Apr  7 23:24:46 UTC 2022: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:49:18: error: implicit declaration of function ‘createPeir’; did you mean ‘createPair’? [-Werror=implicit-function-declaration]
+       Pair* dato=createPeir(key,value);
+                  ^~~~~~~~~~
+                  createPair
+hashmap.c:49:18: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+cc1: all warnings being treated as errors
+Compilation failed
+90ea976
