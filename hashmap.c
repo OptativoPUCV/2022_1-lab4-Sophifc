@@ -58,14 +58,14 @@ void insertMap(HashMap * map, char * key, void * value) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
-  HashMap *mapa=createMap(map->capacity*2);
+  /*HashMap *mapa=createMap(map->capacity*2);
   for(int i=0 ; i < map->capacity ; i++){
       if(map->buckets[i] != NULL){
         insertMap(mapa,map->buckets[i]->key,map->buckets[i]->value);
       }
     }
   mapa->size=0;
-  *map=*mapa;
+  *map=*mapa;*/
 }
 
 
@@ -118,11 +118,23 @@ long pos=hash(key, map->capacity);
 }
 
 Pair * firstMap(HashMap * map) {
-
-    return NULL;
+  
+  for(long i=0; i<map->size; i++){
+    if(map->buckets[i]==NULL && map->buckets[i]->key!=NULL){
+      map->current=i;
+      return map->buckets[i];
+    }
+  }
+  return NULL;
 }
 
 Pair * nextMap(HashMap * map) {
 
-    return NULL;
+  for(long i=map->current+1; i<map->capacity; i++){
+    if(map->buckets[i]!=NULL && map->buckets[i]->key !=NULL){
+      map->current=i;
+      return map->buckets[i];
+    }
+  }
+  }return NULL;
 }
