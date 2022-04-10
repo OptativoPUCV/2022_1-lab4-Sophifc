@@ -59,6 +59,8 @@ void insertMap(HashMap * map, char * key, void * value) {
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
   HashMap *mapa= createMap(map->capacity *2);
+  map->capacity=map->capacity*2;
+  map->size=0;
   for(int i=0; i<map->capacity; i++){
     if(map->buckets[i]!=NULL){
       insertMap(mapa,(map->buckets[i]->key),(map->buckets[i]->value));
