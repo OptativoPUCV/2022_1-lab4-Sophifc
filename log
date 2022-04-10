@@ -205,3 +205,16 @@ Sun Apr 10 23:36:41 UTC 2022:
  tests:  12|2
 total_score: 40/70
 6aadfc6
+Sun Apr 10 23:38:47 UTC 2022: 
+ hashmap.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:67:6: error: ‘HashMap {aka struct HashMap}’ has no member named ‘mapa’
+   map->mapa
+      ^~
+hashmap.c:68:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
+Compilation failed
+b349206
