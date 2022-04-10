@@ -234,3 +234,13 @@ hashmap.c:67:7: error: lvalue required as left operand of assignment
        ^
 Compilation failed
 d76f921
+Sun Apr 10 23:39:54 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:67:6: error: incompatible types when assigning to type ‘HashMap * {aka struct HashMap *}’ from type ‘HashMap {aka struct HashMap}’
+   map=*mapa;
+      ^
+Compilation failed
+bf483e5

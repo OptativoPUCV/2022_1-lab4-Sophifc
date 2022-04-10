@@ -64,7 +64,7 @@ void enlarge(HashMap * map) {
       insertMap(mapa,(map->buckets[i]->key),(map->buckets[i]->value));
     }
   }
-  &map=&mapa;
+  map=*mapa;
 }
 
 
