@@ -224,3 +224,13 @@ Sun Apr 10 23:39:10 UTC 2022:
  tests:  12|2
 total_score: 40/70
 c410888
+Sun Apr 10 23:39:42 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:67:7: error: lvalue required as left operand of assignment
+   &map=&mapa;
+       ^
+Compilation failed
+d76f921
