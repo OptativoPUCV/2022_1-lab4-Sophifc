@@ -41,15 +41,18 @@ int is_equal(void* key1, void* key2){
 
 void insertMap(HashMap * map, char * key, void * value) {
   long aux=hash(key,map->capacity);
-  while(map->buckets[aux]!=NULL){
-    if(is_equal(map->buckets[aux]->key,key)){
-      return;
-    }
-    else{
-      Pair* dato=createPair(key,value);
+  int cont=1;
+  while(cont!=0){
+    if(map->buckets[aux]==NULL){
+      Pair *dato=createPair(key,value);
       map->buckets[aux]=dato;
       map->current=aux;
       map->size++;
+    }
+    else{
+      if(is_equal(key,map->buckets[aux]->key)==1){
+        break;
+      }
     }
     aux++;
   }
@@ -57,13 +60,13 @@ void insertMap(HashMap * map, char * key, void * value) {
 }
 
 void enlarge(HashMap * map) {
-    enlarge_called = 1; //no borrar (testing purposes)
+  enlarge_called = 1; //no borrar (testing purposes)
   HashMap *mapa= createMap(map->capacity *2);
   map->capacity=(map->capacity)*2;
   map->size=0;
-  for(int i=0; i<map->capacity; i++){
+  for(int i=0; i<(map->capacity); i++){
     if(map->buckets[i]!=NULL){
-      insertMap(mapa,(map->buckets[i]->key),(map->buckets[i]->value));
+      insertMap(mapa,map->buckets[i]->key,map->buckets[i]->value);
     }
   }
   *map=*mapa;
