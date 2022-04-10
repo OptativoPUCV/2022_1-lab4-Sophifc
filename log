@@ -244,3 +244,8 @@ hashmap.c:67:6: error: incompatible types when assigning to type ‘HashMap * {a
       ^
 Compilation failed
 bf483e5
+Sun Apr 10 23:40:02 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+96b328f
