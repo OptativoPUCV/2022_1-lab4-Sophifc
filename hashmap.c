@@ -48,9 +48,10 @@ void insertMap(HashMap * map, char * key, void * value) {
       map->buckets[aux]=dato;
       map->current=aux;
       map->size++;
+      break;
     }
     else{
-      if(is_equal(key,map->buckets[aux]->key)==1){
+      if(is_equal(key, (map->buckets[aux]->key))==1){
         break;
       }
     }
